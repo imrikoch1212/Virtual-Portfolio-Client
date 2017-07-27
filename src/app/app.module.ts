@@ -7,10 +7,12 @@ import { PatientShortDetailsComponent } from './patient-short-details.component'
 import { AppComponent }         from './app.component';
 import { CaseComponent } from './case/case.component';
 import { RouterModule, Routes } from '@angular/router';
+import  { PatientService } from './patient-service'
 
 const appRoutes: Routes = [
-  {path: 'case', component: CaseComponent},
-  {path: 'cases', component: PatientsComponent}
+  // {path: 'case', component: CaseComponent},
+  {path: 'cases', component: PatientsComponent},
+  {path: 'cases/:id', component: CaseComponent}
 ];
 
 
@@ -35,7 +37,7 @@ const appRoutes: Routes = [
     PatientShortDetailsComponent,
     CaseComponent
   ],
-  // providers: [ HeroService],
+   providers: [ PatientService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

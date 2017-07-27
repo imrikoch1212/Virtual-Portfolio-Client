@@ -8,7 +8,7 @@
 <h2 class="text-center">תיקים מקושרים</h2>
 <br>
 <div dir="rtl">
-  <div class="col-md-3" *ngFor="let patient of patients" >
-    <patient-short-detail [patient]="patient"></patient-short-detail>
+  <div class="col-md-3" *ngFor="let case of cases" >
+    <patient-short-detail [patient]="case.patientInfo"></patient-short-detail>
   </div>
 </div>
