@@ -1,12 +1,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    <span>תיק טיפול ב</span>- {{patient.privateName}} {{patient.surName}}
+    <span>תיק טיפול ב</span>- <b>{{patient.privateName}} {{patient.surName}}</b>
   </div>
   <div class="panel-body">
-    <img src="{{patient.picture}}" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
+    <img src="../assets/img/child1.jpg" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
     <b>גיל:</b> {{patient.age}}<br>
     <b>כתובת:</b> {{patient.address}}<br>
-    <b>מספר טלפון:</b> {{patient.phone}}
-    <button class="btn btn-link btn-sm" (click)="goToDetails()">לפרטים נוספים</button>
+    <b>מספר טלפון:</b> {{patient.phone}}<br>
+    <a [routerLink]="['/cases', patient.id_number]"  class="btn btn-link btn-sm">לפרטים נוספים</a>
+    <!--<case [case]="patient"></case>-->
   </div>
 </div>

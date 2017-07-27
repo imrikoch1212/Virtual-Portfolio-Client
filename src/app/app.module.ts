@@ -4,33 +4,40 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { PatientsComponent } from './patients.component';
 import { PatientShortDetailsComponent } from './patient-short-details.component';
-// import { AppRoutingModule } from './app-routing.module';
-
-// Imports for loading & configuring the in-memory web api
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService }  from './in-memory-data.services';
-
 import { AppComponent }         from './app.component';
-// import { DashboardComponent }   from './dashboard.component';
-// import { HeroesComponent }      from './patients.component';
-// import { HeroDetailComponent }  from './hero-detail.component';
-// import { HeroSearchComponent } from './hero-search.component';
-// import { HeroService }          from './hero.service';
+import { CaseComponent } from './case/case.component';
+import { RouterModule, Routes } from '@angular/router';
+import  { PatientService } from './patient-service'
+
+const appRoutes: Routes = [
+  // {path: 'case', component: CaseComponent},
+  {path: 'cases', component: PatientsComponent},
+  {path: 'cases/:id', component: CaseComponent}
+];
+
+
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
+    // other imports here
+
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
     // AppRoutingModule
   ],
   declarations: [
     AppComponent,
     PatientsComponent,
-    PatientShortDetailsComponent
+    PatientShortDetailsComponent,
+    CaseComponent
   ],
-  // providers: [ HeroService],
+   providers: [ PatientService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

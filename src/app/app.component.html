@@ -3,7 +3,7 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand navbar-right" href="#">
       <i class="fa fa-child text-primary" aria-hidden="true"></i>
-      <span class="text-primary">פורטל לריכוז טיפול בילדים עם אוטיזם</span>
+      <span class="text-primary">פורטל לריכוז טיפול בילדים בספקטרום האוטיסטי</span>
     </a>
 
     <div class="navbar-header">
@@ -21,15 +21,16 @@
       </div>
       <div *ngIf="isLoggedIn" class="navbar-left">
         <img *ngIf="!loggedUser.avatar" src="../assets/img/avatar.png" width="30">
-        <button type="button" class="btn btn-link navbar-btn " style="margin-right:5px">
-          <i class="fa fa-cog" aria-hidden="true"></i>
+        <button type="button" class="btn btn-link navbar-btn " data-toggle="tooltip" title="הגדרות" style="margin-right:5px">
+          <i class="fa fa-cog" aria-hidden="true" ></i>
         </button>
-        <button type="button" class="btn btn-link navbar-btn " style="margin-right:5px">
-          <i class="fa fa-address-book" aria-hidden="true"></i>
+        <button type="button" routerLink="cases" class="btn btn-link navbar-btn "  data-toggle="tooltip" title="תיקי טיפול" style="margin-right:5px">
+          <i class="fa fa-address-book" aria-hidden="true"> </i>
         </button>
       </div>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>
+  </div>
 
-<my-patients></my-patients>
+</nav>
+<router-outlet></router-outlet>
+
