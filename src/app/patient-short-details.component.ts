@@ -6,7 +6,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component({
   selector: 'patient-short-detail',
-  templateUrl: `./patient-short-detail.component.html`,
+  templateUrl: './patient-short-detail.component.html',
   // styleUrls: ['./hero-detail.component.css'],
 })
 
