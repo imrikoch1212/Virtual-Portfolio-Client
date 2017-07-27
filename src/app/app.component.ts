@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'תיק וירטואלי';
-  loggedUser: any;
+  loggedUser = {email: "yarinvak@gmail.com", privateName: "yarin", surName: 'vaknin'};
   isLoggedIn = true;
   constructor () {
   }

@@ -1,6 +1,12 @@
-<div>
-  <div > {{patient.name}}</div>
-  <div> {{patient.age}}</div>
-  <button (click)="goToDetails()">פרטים נוספים</button>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span>תיק טיפול ב</span>- {{patient.privateName}} {{patient.surName}}
+  </div>
+  <div class="panel-body">
+    <img src="{{patient.picture}}" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
+    <b>גיל:</b> {{patient.age}}<br>
+    <b>כתובת:</b> {{patient.address}}<br>
+    <b>מספר טלפון:</b> {{patient.phone}}
+    <button class="btn btn-link btn-sm" (click)="goToDetails()">לפרטים נוספים</button>
+  </div>
 </div>
-<span></span>

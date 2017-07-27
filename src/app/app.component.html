@@ -19,11 +19,12 @@
           <i class="fa fa-key"></i>
         </button>
       </div>
-      <div *ngIf="isLoggedIn">
-        <button type="button" class="btn btn-link navbar-btn navbar-left" style="margin-right:5px">
+      <div *ngIf="isLoggedIn" class="navbar-left">
+        <img *ngIf="!loggedUser.avatar" src="../assets/img/avatar.png" width="30">
+        <button type="button" class="btn btn-link navbar-btn " style="margin-right:5px">
           <i class="fa fa-cog" aria-hidden="true"></i>
         </button>
-        <button type="button" class="btn btn-link navbar-btn navbar-left" style="margin-right:5px">
+        <button type="button" class="btn btn-link navbar-btn " style="margin-right:5px">
           <i class="fa fa-address-book" aria-hidden="true"></i>
         </button>
       </div>
