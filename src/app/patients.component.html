@@ -1,0 +1,24 @@
+<h2>המטופלים שלי</h2>
+<div>
+  <!--<label>Hero name:</label> <input #heroName />-->
+  <!--<button (click)="add(heroName.value); heroName.value=''">-->
+    <!--Add-->
+  <!--</button>-->
+</div>
+<ul class="heroes">
+  <li *ngFor="let patient of patients">
+  <patient-short-detail [patient]="patient"></patient-short-detail>
+      <!--[class.selected]="patient === selectedPatient"-->
+      <!--(click)="onSelect(patient)">-->
+    <!--<span class="badge">{{patient.id}}</span>-->
+    <!--<span>{{patient.name}}</span>-->
+    <!--<button class="delete"-->
+            <!--(click)="delete(patient); $event.stopPropagation()">x</button>-->
+  </li>
+</ul>
+<div *ngIf="selectedPatient">
+  <h2>
+    {{selectedPatient.name | uppercase}}
+  </h2>
+  <button (click)="gotoDetail()">הצג פרטים</button>
+</div>
