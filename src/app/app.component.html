@@ -2,21 +2,31 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand navbar-right" href="#">
-      <i class="fa fa-child" aria-hidden="true"></i>
-      פורטל לריכוז טיפול בילדים עם אוטיזם</a>
+      <i class="fa fa-child text-primary" aria-hidden="true"></i>
+      <span class="text-primary">פורטל לריכוז טיפול בילדים עם אוטיזם</span>
+    </a>
 
     <div class="navbar-header">
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left" style="margin-right:5px">
-        <b>הרשמה</b>
-        <i class="fa fa-user-circle" aria-hidden="true"></i>
-      </button>
-      <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left">
-        התחברות
-        <i class="fa fa-key"></i>
-      </button>
-
+      <div *ngIf="!isLoggedIn">
+        <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left" style="margin-right:5px">
+          <b>הרשמה</b>
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left">
+          התחברות
+          <i class="fa fa-key"></i>
+        </button>
+      </div>
+      <div *ngIf="isLoggedIn">
+        <button type="button" class="btn btn-link navbar-btn navbar-left" style="margin-right:5px">
+          <i class="fa fa-cog" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="btn btn-link navbar-btn navbar-left" style="margin-right:5px">
+          <i class="fa fa-address-book" aria-hidden="true"></i>
+        </button>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
