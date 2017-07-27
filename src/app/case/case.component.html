@@ -1,0 +1,82 @@
+<div style="margin-top:65px"></div>
+<style>
+  .col-md-2 {
+    float: right;
+  }
+
+  .col-md-4 {
+    float: right;
+  }
+
+  .col-md-3 {
+    float: right;
+  }
+
+  .col-md-5 {
+    float: right;
+  }
+
+  .col-md-12 {
+    float: right;
+  }
+</style>
+<div class="col-md-4">
+  <div class="col-md-12">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <span>תיק טיפול ב</span>- <b>{{patient.privateName}} {{patient.surName}}</b>
+        <i class="fa fa-folder pull-left" aria-hidden="true"></i>
+      </div>
+      <div class="panel-body">
+        <img src="{{patient.picture}}" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
+        <b>גיל:</b> {{patient.age}}<br>
+        <b>כתובת:</b> {{patient.address}}<br>
+        <b>מספר טלפון:</b> {{patient.phone}}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span>תיאור כללי</span>
+        <i class="fa fa-info pull-left" aria-hidden="true"></i>
+      </div>
+      <div class="panel-body">
+        {{patient.diagnosis}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span>מטפלים מקושרים</span>
+        <i class="fa fa-smile-o pull-left" aria-hidden="true"></i>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
+          <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
+          <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
+          <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span>פרטים נוספים</span>
+        <i class="fa fa-calendar-plus-o pull-left" aria-hidden="true"></i>
+      </div>
+      <div class="panel-body">
+        <b>תאריך יצירת התיק</b>: {{case.creationDate | date: 'dd/MM/yyyy HH:ss'}}<br>
+        <b>תאריך עדכון אחרון</b>: {{case.lastUpdateDate | date: 'dd/MM/yyyy HH:ss'}}
+      </div>
+    </div>
+  </div>
+</div>
+
