@@ -1,14 +1,39 @@
-import { Patient } from './entities/patient';
+import {Patient} from './entities/patient';
 
 export const PATIENTS: Patient[] = [
-  { id: 11, name: 'Mr. Nice', age: 12},
-  { id: 12, name: 'Narco', age: 12},
-  { id: 13, name: 'Bombasto', age: 12},
-  { id: 14, name: 'Celeritas', age: 12 },
-  { id: 15, name: 'Magneta', age: 12 },
-  { id: 16, name: 'RubberMan', age: 12 },
-  { id: 17, name: 'Dynama', age: 12 },
-  { id: 18, name: 'Dr IQ', age: 12 },
-  { id: 19, name: 'Magma', age: 12 },
-  { id: 20, name: 'Tornado', age: 12 }
+  {
+    privateName: "דניאלה",
+    surName: "מיכאלי",
+    address: "asdf",
+    phone: "0548045513",
+    diagnosis: "",
+    picture: "../assets/img/child1.jpg",
+    age: 14,
+    details: [],
+    id_number: "123123123"
+  },
+  {
+    privateName: "מיכאל",
+    surName: "דניאלי",
+    address: "asdf",
+    phone: "0548045513",
+    diagnosis: "",
+    picture: "../assets/img/child2.jpg",
+    age: 14,
+    details: [],
+    id_number: "123123123"
+
+  },
+  {
+    privateName: "מיקי",
+    surName: "דניאלי",
+    address: "asdf",
+    phone: "0548045513",
+    diagnosis: "",
+    picture: "../assets/img/child3.png",
+    age: 14,
+    details: [],
+    id_number: "123123123"
+
+  },
 ];

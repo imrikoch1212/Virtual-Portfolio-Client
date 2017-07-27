@@ -5,17 +5,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <!--<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>-->
-      <!--<a routerLink="/heroes" routerLinkActive="active">Heroes</a>-->
-    </nav>
-    <my-patients></my-patients>
-    <!--<router-outlet></router-outlet>-->
-  `,
+  templateUrl: `./app.component.html`,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'תיק וירטואלי';
+  loggedUser = {email: "yarinvak@gmail.com", privateName: "yarin", surName: 'vaknin'};
+  isLoggedIn = true;
+  constructor () {
+  }
 }
