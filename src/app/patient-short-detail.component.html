@@ -3,11 +3,10 @@
     <span>תיק טיפול ב</span>- <b>{{patient.privateName}} {{patient.surName}}</b>
   </div>
   <div class="panel-body">
-    <img src="../assets/img/child1.jpg" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
+    <img src="../assets/img/child2.jpg" height="70" class="" align="right" style="margin-left:20px; max-width: 100px">
     <b>גיל:</b> {{patient.age}}<br>
     <b>כתובת:</b> {{patient.address}}<br>
     <b>מספר טלפון:</b> {{patient.phone}}<br>
     <a [routerLink]="['/cases', patient.id_number]"  class="btn btn-link btn-sm">לפרטים נוספים</a>
-    <!--<case [case]="patient"></case>-->
   </div>
 </div>

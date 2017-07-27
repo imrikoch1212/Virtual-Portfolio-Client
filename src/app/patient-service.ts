@@ -4,14 +4,14 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class PatientService {
-  private heroesUrl = 'http://localhost:3000/cases';  // URL to web api
+  private url = 'http://localhost:3000/cases';  // URL to web api
   private heroesByIdUrl = 'http://localhost:3000/cases';  // URL to web api
 
   constructor(private http: Http) {
   }
 
   getCases(): Promise<any> {
-    return this.http.get(this.heroesUrl)
+    return this.http.get(this.url+'/getByTherapistId/597a5af37521b3059c990724')
       .toPromise()
       .then(response =>
         response.json() as any
@@ -20,7 +20,7 @@ export class PatientService {
   }
 
   getCaseById(id :string) : Promise <any> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.url}/${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response =>
