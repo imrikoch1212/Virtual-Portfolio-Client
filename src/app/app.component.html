@@ -1,31 +1,33 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand navbar-right" href="#">
       <i class="fa fa-child text-primary" aria-hidden="true"></i>
-      <span class="text-primary">פורטל לריכוז טיפול בילדים בספקטרום האוטיסטי</span>
+      <span class="text-primary">פורטל לריכוז טיפול בילדים עם ASD</span>
     </a>
 
     <div class="navbar-header">
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div *ngIf="!isLoggedIn">
+      <div *ngIf="!loginService.loggedInUser">
         <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left" style="margin-right:5px">
           <b>הרשמה</b>
           <i class="fa fa-user-circle" aria-hidden="true"></i>
         </button>
-        <button type="button" class="btn btn-default btn-sm navbar-btn navbar-left">
+        <button type="button" routerLink="login" class="btn btn-default btn-sm navbar-btn navbar-left">
           התחברות
           <i class="fa fa-key"></i>
         </button>
       </div>
-      <div *ngIf="isLoggedIn" class="navbar-left">
-        <img *ngIf="!loggedUser.avatar" src="../assets/img/avatar.png" width="30">
+      <div *ngIf="loginService.loggedInUser" class="navbar-left">
+        <img *ngIf="!loginService.loggedInUser.avatar" src="../assets/img/avatar.png" title="{{loginService.loggedInUser.privateName}}" width="30">
         <button type="button" class="btn btn-link navbar-btn " data-toggle="tooltip" title="הגדרות" style="margin-right:5px">
           <i class="fa fa-cog" aria-hidden="true" ></i>
         </button>
         <button type="button" routerLink="cases" class="btn btn-link navbar-btn "  data-toggle="tooltip" title="תיקי טיפול" style="margin-right:5px">
           <i class="fa fa-address-book" aria-hidden="true"> </i>
+        </button>
+        <button type="button" class="btn btn-link navbar-btn" data-toggle="tooltip" title="התנתק" (click)="disconnect()">
+          <i class="fa fa-times-circle" aria-hidden="true"></i>
         </button>
       </div>
     </div>

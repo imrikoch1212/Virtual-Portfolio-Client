@@ -22,28 +22,7 @@ export class CaseComponent implements OnInit {
         this.case = temp;
       });
   }
-  // case = {
-  //   patientInfo: {
-  //     privateName: "מיכאל",
-  //     surName: "דניאלי",
-  //     address: "asdf",
-  //     phone: "0548045513",
-  //     diagnosis: "",
-  //     picture: "../assets/img/child2.jpg",
-  //     age: 14,
-  //     details: [""],
-  //     id_number: "123123123"
-  //   },
-  //   creationDate: '1968-11-16T00:00:00',
-  //   lastUpdateDate: '1968-11-16T00:00:00',
-  //   managerId: "asdasdasdas123123"
-  // }
+
   ;
 
-
-  // title = 'תיק וירטואלי';
-  // loggedUser = {email: "yarinvak@gmail.com", privateName: "yarin", surName: 'vaknin'};
-  // isLoggedIn = true;
-  // constructor () {
-  // }
 }
