@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LoginService} from "./login/login-service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -7,8 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'תיק וירטואלי';
-  loggedUser = {email: "yarinvak@gmail.com", privateName: "yarin", surName: 'vaknin'};
-  isLoggedIn = true;
-  constructor () {
+  loginService : LoginService;
+  parentRouter: Router;
+
+  constructor (private loginServicey: LoginService, private router: Router) {
+    this.loginService = loginServicey;
+    this.parentRouter = router;
+
+    console.log(this.loginService.loggedInUser);
+  }
+
+  disconnect(): void{
+    localStorage.removeItem('loggedUser');
+    this.loginService.loggedInUser=null;
+    this.parentRouter.navigateByUrl('/login');
+
   }
 }
