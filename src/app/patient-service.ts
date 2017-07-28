@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class PatientService {
-  private url = 'http://localhost:3000/cases';  // URL to web api
+  private url = 'http://192.168.78.230:3000/cases';  // URL to web api
   private heroesByIdUrl = 'http://localhost:3000/cases';  // URL to web api
 
   constructor(private http: Http) {
