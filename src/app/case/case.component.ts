@@ -11,6 +11,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class CaseComponent implements OnInit {
   @Input() case: any;
+  therapists: any[];
   name:string;
   constructor(private route: ActivatedRoute, private patientService: PatientService) {
   }
@@ -20,7 +21,11 @@ export class CaseComponent implements OnInit {
       .switchMap((params: ParamMap) => this.patientService.getCaseById(params.get('id')))
       .subscribe(temp => {
         this.case = temp;
+        this.getTherapists();
       });
+  }
+  getTherapists(): void{
+    this.patientService.getTherapists(this.case._id).then(value => this.therapists = value);
   }
 
   ;
