@@ -1,17 +1,18 @@
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Injectable} from '@angular/core';
+import {LoginService} from "./login/login-service";
 
 @Injectable()
 export class PatientService {
   private url = 'http://localhost:3000/cases';  // URL to web api
   private heroesByIdUrl = 'http://localhost:3000/cases';  // URL to web api
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private loginService: LoginService) {
   }
 
   getCases(): Promise<any> {
-    return this.http.get(this.url+'/getByTherapistId/597a5af37521b3059c990724')
+    return this.http.get(this.url+'/getByTherapistId/'+this.loginService.loggedInUser._id)
       .toPromise()
       .then(response =>
         response.json() as any

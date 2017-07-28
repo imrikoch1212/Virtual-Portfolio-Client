@@ -1,0 +1,14 @@
+<div style="margin-top:65px"></div>
+
+<div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">התחברות</h2>
+
+  <form class="login-container">
+    <p><input type="email" placeholder="דואר אלקטרוני" [(ngModel)]="user.email" name="email"></p>
+    <p><input type="password" placeholder="סיסמה" [(ngModel)]="user.password" name="password"></p>
+    <p><input type="submit" value="התחברות" (click)="login()"></p>
+  </form>
+  {{errorMessage}}
+</div>
