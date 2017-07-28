@@ -4,7 +4,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { TaskHandlerService } from './task-handler.service';
 import 'rxjs/add/operator/switchMap';
 import {Task} from '../entities/task';
-
+import { LoginService } from '../login/login-service';
 
 @Component({
   selector: 'task-handler',
@@ -17,8 +17,8 @@ export class TaskHandlerComponent implements OnInit {
   @Input()  name: string; description: string;
   tasks: any;
 
-  getTasks() {
-    this.taskHandlerService.getTasks().then(tasks => {
+  getTasksByPatientId(id: string) {
+    this.taskHandlerService.getTasks(id).then(tasks => {
       this.tasks = tasks.reverse();
     });
   }
@@ -28,14 +28,14 @@ export class TaskHandlerComponent implements OnInit {
     location.reload();
   }
   addTask() {
-    let task = new Task(this.name, this.description);
+    let task = new Task(this.name, this.description, this.loginService.loggedInUser._id);
     this.taskHandlerService.addTask(task);
     location.reload();
   }
   ngOnInit(): void {
-    this.getTasks();
+    this.getTasksByPatientId('597a222673da660948f8f72a');
   }
-  constructor(private taskHandlerService: TaskHandlerService, private  location: Location) {}
+  constructor(private taskHandlerService: TaskHandlerService, private  location: Location, private loginService: LoginService) {}
 
 
 }

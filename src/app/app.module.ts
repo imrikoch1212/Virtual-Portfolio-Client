@@ -17,7 +17,8 @@ const appRoutes: Routes = [
   // {path: 'case', component: CaseComponent},
   {path: 'cases', component: PatientsComponent},
   {path: 'tasks', component: TaskHandlerComponent },
-  {path: 'cases/:id', component: CaseComponent}
+  {path: 'cases/:id', component: CaseComponent},
+  {path: 'login' , component: LoginComponent}
 ];
 
 

@@ -1,3 +1,4 @@
+
 export class Task {
   name: string;
   description: string;
@@ -6,12 +7,15 @@ export class Task {
   patient: string;
   creationDate: Date;
   finishedDate: Date;
-  constructor(name: string, description: string) {
+  therapist: string;
+  constructor(name: string, description: string, therapist: string) {
     this.description = description;
     this.name = name;
     this.status = false;
     this.comment = ' מלא הערות חשובות בטירוף';
     this.creationDate = new Date();
     this.finishedDate = new Date();
+    this.patient = '597a222673da660948f8f72a'
+    this.therapist = therapist;
   }
 }

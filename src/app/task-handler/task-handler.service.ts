@@ -4,15 +4,15 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class TaskHandlerService {
-  private url = 'http://192.168.78.230:3000/tasks';  // URL to web api
+  private url = 'http://192.168.78.230:3000/tasks/byPatient';  // URL to web api
   private addTaskurl = 'http://192.168.78.230:3000/tasks/addTask';  // URL to web api
-  private updateTaskUrl = 'http://192.168.78.230:3000/tasks/updateTask';  // URL to web api
+  private updateTaskUrl = 'http://192.168.78.230:3000/tasks/update';  // URL to web api
 
   private headers = new Headers({'Content-Type': 'application/json'});
   constructor(private http: Http) {
   }
-  getTasks(): Promise<any> {
-    return this.http.get(this.url)
+  getTasks(id: string): Promise<any> {
+    return this.http.get(this.url + '/' + id)
       .toPromise()
       .then(response =>
         response.json() as any

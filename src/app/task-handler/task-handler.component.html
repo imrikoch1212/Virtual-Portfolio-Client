@@ -22,8 +22,8 @@
      <span class="col col-md-9 center" dir="rtl" style="float: right">
         <div class="panel panel-default">
           <div class="panel panel-heading">
-            <span class="panel-title">{{task.name}}
-             <button type="button" data-toggle="modal" data-target="#myModal" class="col pull-left btn btn-success" style="padding: 2px 8px !important;">בוצע</button></span>
+            <span class="panel-title">{{task.name}}/ {{task.therapist.surName}}
+              <button [disabled]="task.status" type="button" (click)="updateTask(task)" class="col pull-left btn btn-success" style="padding: 2px 8px !important;">בוצע</button> <span class="pull-left" style="margin-left: 10px">{{task.creationDate | date: 'dd/MM/yyyy HH:ss'}}</span></span>
           </div>
         <div class="panel-body">{{task.description}}</div>
       </div>
@@ -31,27 +31,27 @@
     </span>
 </span>
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+  <!--<div class="modal fade" id="myModal" role="dialog">-->
+    <!--<div class="modal-dialog">-->
 
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">הערות נוספות לגבי ביצוע המשימה</h4>
-        </div>
-        <div class="modal-body">
-          <input class="form-control" id="task-notes">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-dismiss="modal">שלח</button>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">סגור</button>
-        </div>
-      </div>
+      <!--&lt;!&ndash; Modal content&ndash;&gt;-->
+      <!--<div class="modal-content">-->
+        <!--<div class="modal-header">-->
+          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+          <!--<h4 class="modal-title">הערות נוספות לגבי ביצוע המשימה</h4>-->
+        <!--</div>-->
+        <!--<div class="modal-body">-->
+          <!--<input class="form-control" id="task-notes">-->
+        <!--</div>-->
+        <!--<div class="modal-footer">-->
+          <!--<button type="button" class="btn btn-success" data-dismiss="modal">שלח</button>-->
+          <!--<button type="button" class="btn btn-danger" data-dismiss="modal">סגור</button>-->
+        <!--</div>-->
+      <!--</div>-->
 
-    </div>
+    <!--</div>-->
 
 
-  </div>
+  <!--</div>-->
 </span>
 
