@@ -5,7 +5,7 @@ import {LoginService} from "./login/login-service";
 
 @Injectable()
 export class PatientService {
-  private url = 'http://localhost:3000/cases';  // URL to web api
+  private url = 'http://192.168.78.230:3000/cases';  // URL to web api
   private users_url ='http://localhost:3000/users';
   private heroesByIdUrl = 'http://localhost:3000/cases';  // URL to web api
 

@@ -1,0 +1,57 @@
+<br>
+<br>
+<h2 class="text-center">משימות למטופל</h2>
+<span >
+  <button  class="btn btn-primary pull-left " data-toggle="collapse" data-target="#addTask" style="text-align: left; margin-left: 40px"> הוסף משימה</button>
+</span>
+<br>
+<form id="addTask" class="collapse jumbotron" style="width: 400px;margin-left: 30%; margin-right:40%; padding-right: 20px ">
+  <div class="form-group">
+    <label>שם המשימה</label>
+    <input  [(ngModel)]="name" class="form-control" name="name" placeholder="הכנס שם" style="width: 80%">
+  </div>
+  <div class="form-group">
+    <label>תיאור</label>
+    <input [(ngModel)]="description" class="form-control" name="description" style="width: 80%" placeholder="הכנס תיאור">
+  </div>
+  <button type="submit" style="margin-right:30% " (click)="addTask()" class="btn btn-default">שלח</button>
+  <button type="submit" data-toggle="collapse" data-target="#addTask" class="btn btn-default">בטל</button>
+</form>
+<span *ngFor="let task of tasks" class="col-md-12">
+  <span class="row">
+     <span class="col col-md-9 center" dir="rtl" style="float: right">
+        <div class="panel panel-default">
+          <div class="panel panel-heading">
+            <span class="panel-title">{{task.name}}
+             <button type="button" data-toggle="modal" data-target="#myModal" class="col pull-left btn btn-success" style="padding: 2px 8px !important;">בוצע</button></span>
+          </div>
+        <div class="panel-body">{{task.description}}</div>
+      </div>
+      <br>
+    </span>
+</span>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">הערות נוספות לגבי ביצוע המשימה</h4>
+        </div>
+        <div class="modal-body">
+          <input class="form-control" id="task-notes">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">שלח</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">סגור</button>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</span>
+
