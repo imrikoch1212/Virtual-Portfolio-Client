@@ -57,10 +57,10 @@
         </div>
         <div class="panel-body">
           <ul>
-            <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
-            <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
-            <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
-            <li>דניאלה לוי, תרפיסטית, מספר טלפון: 0546378087</li>
+            <li *ngFor="let therapist of therapists" >
+              {{therapist.privateName}} {{therapist.surName}}, כתובת: {{therapist.address}}
+            </li>
+
           </ul>
         </div>
       </div>
