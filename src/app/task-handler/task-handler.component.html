@@ -17,7 +17,8 @@
   <button type="submit" style="margin-right:30% " (click)="addTask()" class="btn btn-default">שלח</button>
   <button type="submit" data-toggle="collapse" data-target="#addTask" class="btn btn-default">בטל</button>
 </form>
-<span *ngFor="let task of tasks" class="col-md-12">
+<span *ngIf="tasks">
+  <span *ngFor="let task of tasks" class="col-md-12">
   <span class="row">
      <span class="col col-md-9 center" dir="rtl" style="float: right">
         <div class="panel panel-default">
@@ -30,6 +31,8 @@
       <br>
     </span>
 </span>
+</span>
+
   <!-- Modal -->
   <!--<div class="modal fade" id="myModal" role="dialog">-->
     <!--<div class="modal-dialog">-->

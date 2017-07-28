@@ -19,6 +19,14 @@ export class TaskHandlerService {
       )
       .catch(this.handleError);
   }
+  getTasksShort(id: string): Promise<any> {
+    return this.http.get(this.url + '/' + id)
+      .toPromise()
+      .then(response =>
+        response.json() as any
+      )
+      .catch(this.handleError);
+  }
   addTask(task: any): Promise<void>  {
      return this.http
       .post(this.addTaskurl, {task: task}, {headers: this.headers}).toPromise()

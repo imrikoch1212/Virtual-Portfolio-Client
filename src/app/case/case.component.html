@@ -46,6 +46,7 @@
           {{case.patientInfo.diagnosis}}
         </div>
       </div>
+
     </div>
   </div>
   <div class="col-md-4">
@@ -63,6 +64,16 @@
 
           </ul>
         </div>
+
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span>משימות</span>
+          <i [routerLink]="['/tasks', case._id]" class="fa fa-check-square-o  pull-left" aria-hidden="true"></i>
+        </div>
+        <div *ngIf="task" class="panel-body">
+          {{task.description}}
+        </div>
       </div>
     </div>
   </div>
@@ -78,8 +89,21 @@
           <b>תאריך עדכון אחרון</b>: {{case.lastUpdateDate | date: 'dd/MM/yyyy HH:ss'}}
         </div>
       </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <span>תובנות</span>
+          <i class="fa fa-lightbulb-o pull-left" aria-hidden="true"></i>
+        </div>
+        <div class="panel-body">
+            <li> יכול ללכת לשירותים שמצביע 3 אצבעות</li>
+            <li> מתמודד עם שינויים</li>
+            <li>יכולות לימודיות מגוונות</li>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+
 
 

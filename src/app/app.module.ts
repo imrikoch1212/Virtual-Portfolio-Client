@@ -16,7 +16,7 @@ import {LoginService} from "./login/login-service";
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cases', component: PatientsComponent},
-  {path: 'tasks', component: TaskHandlerComponent },
+  {path: 'tasks/:id', component: TaskHandlerComponent },
   {path: 'cases/:id', component: CaseComponent},
   {path: 'login' , component: LoginComponent}
 ];

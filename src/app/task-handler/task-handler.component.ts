@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-// import {ActivatedRoute} from  '@angular/router';
+ import { ActivatedRoute, ParamMap} from  '@angular/router';
  import {Location} from  '@angular/common';
 import { TaskHandlerService } from './task-handler.service';
 import 'rxjs/add/operator/switchMap';
@@ -16,7 +16,7 @@ import { LoginService } from '../login/login-service';
 export class TaskHandlerComponent implements OnInit {
   @Input()  name: string; description: string;
   tasks: any;
-
+  patientId: string;
   getTasksByPatientId(id: string) {
     this.taskHandlerService.getTasks(id).then(tasks => {
       this.tasks = tasks.reverse();
@@ -28,14 +28,22 @@ export class TaskHandlerComponent implements OnInit {
     location.reload();
   }
   addTask() {
-    let task = new Task(this.name, this.description, this.loginService.loggedInUser._id);
+    let task = new Task(this.name, this.description, this.loginService.loggedInUser._id,'597a25b12b4ed60998709e80');
     this.taskHandlerService.addTask(task);
     location.reload();
   }
   ngOnInit(): void {
-    this.getTasksByPatientId('597a222673da660948f8f72a');
+    this.route.paramMap
+      .switchMap((params: ParamMap) => this.taskHandlerService.getTasks(params.get('id')))
+      .subscribe(temp => {
+        this.tasks = temp;
+      });
   }
-  constructor(private taskHandlerService: TaskHandlerService, private  location: Location, private loginService: LoginService) {}
+  constructor(
+    private taskHandlerService: TaskHandlerService,
+    private  location: Location,
+    private loginService: LoginService,
+    private  route: ActivatedRoute) {}
 
 
 }
